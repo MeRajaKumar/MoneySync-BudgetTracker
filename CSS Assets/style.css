@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Gabarito&display=swap');
+:root{
+    --text-color:#fff;
+    --background-color: #2d3550;
+    --promary-color: #424769;
+    --secondary-color: #767F9D;
+    --other-color: #F9B17A;
+    --common-font: Roleway Regular;
+    --secondary-font: Tahoma;
+}
+/* :root{
+    --text-color:#fff;
+    --background-color: #2D142C;
+    --promary-color: #801336;
+    --secondary-color: #C72C41;
+    --other-color: #EE4540;
+    --common-font: Roleway Regular;
+    --secondary-font: Roleway Semibold;
+
+    --f-system: -apple-system,San Francisco,BlinkMacSystemFont,Roboto,Segoe UI;
+    --f-fallback: Helvetica,Arial,sans-serif;
+    --f-ar: Tahoma;
+    --f-ur: Tahoma;
+    --f-hi: "Nirmala UI",Mangal,"Kohinoor Devanagari";
+    --f-bn: "Nirmala UI",Vrinda,"Kohinoor Bangla";
+    --f-th: "Sukhumvit Set","Leelawadee UI","Leelawadee";
+    --f-ko: "Malgun Gothic","Apple SD Gothic Neo";
+    --f-ja: "Hiragino Kaku Gothic Pro","Meiryo UI","Yu Gothic UI";
+} */
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Gabarito', sans-serif;
+    box-sizing: border-box;
+}
+body{
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--secondary-font);
+}
+header{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    width: 100%;
+    height: 75px;
+    background-color: var(--promary-color);
+}
+.logo{
+    width: 250px;
+    background-color: #864e4e;
+}
+.logo h1{
+    text-align: center;
+    font-size: 25px;
+}
+.nav-iteams{
+    width: 550px;
+    background-color: #864e4e;
+    height: 75px;
+}
+.btn{
+    width: 325px;
+    background-color: #864e4e;
+    height: 75px;
+}
