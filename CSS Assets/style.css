@@ -39,28 +39,18 @@ body{
     font-family: var(--secondary-font);
 }
 header{
-    display: flex;
-    justify-content:space-between;
-    align-items: center;
     width: 100%;
     height: 75px;
     background-color: var(--promary-color);
 }
 .logo{
-    width: 250px;
-    background-color: #864e4e;
+    position: absolute;
 }
-.logo h1{
-    text-align: center;
-    font-size: 25px;
+.logo > h1{
+    align-items: center;
+    margin: 13px 0px 0px 10px;
 }
-.nav-iteams{
-    width: 550px;
-    background-color: #864e4e;
-    height: 75px;
-}
-.btn{
-    width: 325px;
-    background-color: #864e4e;
-    height: 75px;
+.navIteams{
+    position: relative;
+    background-color: #F9B17A;
 }
