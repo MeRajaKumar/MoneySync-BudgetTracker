@@ -1,2 +1,4 @@
 # Money-Management-Site
-URL - https://merajakumar.github.io/Money-Management-Site/
+URL - moneymanagementbyag.netlify.app
+
+
