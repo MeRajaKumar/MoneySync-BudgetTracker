@@ -1,22 +1,37 @@
 /* eslint-disable react/jsx-no-undef */
 
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from '../JS/Home';
-import Navbar from '../JS/Navbar';
-import About from '../JS/About';
-import Contact from '../JS/Contact';
+import { BrowserRouter as Router, Routes, Route, Navigate,  } from 'react-router-dom';
+import Login from "./pages/Auth/Login";
+import SignUp from "./pages/Auth/Signup";
+import Home from "./pages/Dashboard/Home";
+import Income from "./pages/Dashboard/Income";
+import Expense from "./pages/Dashboard/Expense";
 
-function App() {
+const App = () => {
   return (
-    <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
-    </Router>
+    <div>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Root />} />
+          <Route path="/login" exact element={<Login />} />
+          <Route path="/signup" exact element={<SignUp />} />
+          <Route path="/dashboard" exact element={<Home />} />
+          <Route path="/income" exact element={<Income />} />
+          <Route path="/expense" exact element={<Expense />} />
+        </Routes>
+      </Router>
+    </div>
   );
-}
+};
 
 export default App;
+
+const Root = () => {
+  const isAuthenticated = !!localStorage.getItem("token");
+
+  return isAuthenticated ? (
+    <Navigate to="/dashboard" />
+  ) : (
+    <Navigate to="/login" />
+  );
+};
