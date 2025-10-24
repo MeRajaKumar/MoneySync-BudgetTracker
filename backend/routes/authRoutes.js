@@ -1,4 +1,6 @@
 const express = require ("express");
+import { protect } from "../middleware/authMiddleware.js";
+import { registerUser, loginUser, getUserInfo } from "../controllers/authController";
 
 const {
     registerUser, 
