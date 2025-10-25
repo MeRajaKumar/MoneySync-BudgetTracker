@@ -1,4 +1,4 @@
-const User = require('../models/User');
+const User = require('../models/User.js');
 const jwt = require("jsonwebtoken");
 
 const generateToken = (id) => {
@@ -37,7 +37,47 @@ exports.registerUser = async (req,res) => {
     }
 };
 //Login User
-exports.loginUser = async (req,res) => {};
-//Register User
+exports.loginUser = async (req, res) => {
+    const { email, password } = req.body;
 
-exports.getUserInfo= async (req,res) => {};
+    if (!email || !password) {
+        return res.status(400).json({ message: "All fields are required" });
+    }
+
+    try {
+        const user = await User.findOne({ email });
+        if (!user || !(await user.comparePassword(password))) {
+            return res.status(400).json({ message: "Invalid Credentials" });
+        }
+
+        res.status(200).json({
+            id: user._id,
+            fullName: user.fullName,
+            email: user.email,
+            profileImageUrl: user.profileImageUrl,
+            token: generateToken(user._id)
+        });
+    } catch (err) {
+        res.status(500).json({ message: "Error logging in", error: err.message });
+    }
+};
+
+// Register Info
+exports.getUserInfo = async (req, res) => {
+    try {
+        // The 'protect' middleware should attach user ID to req.user.id
+        const user = await User.findById(req.user.id).select("-password"); // exclude password
+        if (!user) {
+            return res.status(404).json({ message: "User not found" });
+        }
+
+        res.status(200).json({
+            id: user._id,
+            fullName: user.fullName,
+            email: user.email,
+            profileImageUrl: user.profileImageUrl
+        });
+    } catch (err) {
+        res.status(500).json({ message: "Error fetching user info", error: err.message });
+    }
+};

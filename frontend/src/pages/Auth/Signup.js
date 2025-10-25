@@ -1,6 +1,6 @@
 import React from 'react'
 import AuthLayout from '../../components/layouts/AuthLayout';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import Input from '../../components/Inputs/Input.js';
 import { validateEmail } from '../../utils/helper';
@@ -81,6 +81,18 @@ const Signup = () => {
                       />
                     </div>
                 </div>
+                {error && <p className="text-red-500 text-xs pb-2.5 ">{error}</p>}
+                    
+                    <button type="submit" className="btn-primary">
+                      SIGN UP
+                    </button>
+                    
+                    <p className="tex-[13px] text-slate-800 mt-3">
+                      Already have an account?{" "}
+                      <Link className="font-medium text-primary underline" to="/login">
+                        Login
+                      </Link>
+                    </p>
         </form>   
       </div>
     </AuthLayout>
