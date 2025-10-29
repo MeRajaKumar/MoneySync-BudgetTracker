@@ -1,6 +1,7 @@
 // import React from 'react'
 // import SideMenu from './SideMenu ';
 
+<<<<<<< Updated upstream
 // const Navbar = () => {
 //     const [openSideMenu, setOpenSideMenu]= useState(false);
 //   return (
@@ -16,6 +17,23 @@
 //             <HiOutlineMenu className="" />
 //         )}
 //         </button>
+=======
+const Navbar = () => {
+    const [openSideMenu, setOpenSideMenu]= useState(false);
+  return (
+    <div classname="">
+        <button
+            className=''
+            onClick={() => {
+                setOpenSideMenu(!openSideMenu);
+            }}
+        >{openSideMenu ?(
+            <HiOutlineX className="" />
+        ):(
+            <HiOutlineMenu className="" />
+        )}
+        </button>
+>>>>>>> Stashed changes
 
 //         <h2 className=" ">Expense Tracker</h2>
 
