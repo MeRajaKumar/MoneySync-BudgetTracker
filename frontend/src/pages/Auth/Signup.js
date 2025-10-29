@@ -8,7 +8,8 @@ import ProfilePhotoSelector from "../../components/Inputs/ProfilePhotoSelector";
 import axiosInstance from "../../utils/axiosInstance.js";
 import { API_PATHS } from "../../utils/apiPaths.js";
 import { UserContext } from "../../context/UserContext.js";
-import { uploadImage } from "../../utils/uploadImage";
+import uploadImage from "../../utils/uploadImage";
+
 
 const Signup = () => {
   const [profilePic, setProfilePic] = useState(null);
@@ -44,11 +45,7 @@ const Signup = () => {
     setLoading(true);
 
     try {
-<<<<<<< Updated upstream
       let profileImageUrl = "";
-=======
-      const response = await axiosInstance.post(API_PATHS.AUTH.REGISTER)
->>>>>>> Stashed changes
 
       // upload image if present
       if (profilePic) {
