@@ -1,7 +1,7 @@
 import React from 'react'
 import SideMenu from './SideMenu ';
 
-const Navbar = () => 
+const Navbar = () => {
     const [openSideMenu, setOpenSideMenu]= useState(false);
   return (
     <div classname="">
