@@ -5,6 +5,8 @@ import { useState } from 'react';
 import Input from '../../components/Inputs/Input.js';
 import { validateEmail } from '../../utils/helper';
 import ProfilePhotoSelector from "../../components/Inputs/ProfilePhotoSelector";
+import axiosInstance from '../../utils/axiosInstance.js';
+import { API_PATHS } from '../../utils/apiPaths.js';
 
 
 const Signup = () => { 
@@ -38,6 +40,11 @@ const Signup = () => {
     }
 
     setError("");
+
+    //signUp api call
+    try {
+      const response = await axiosInstance.post(API_PATHS.AUTH.REGISTER,)
+    }
 
   }
 
