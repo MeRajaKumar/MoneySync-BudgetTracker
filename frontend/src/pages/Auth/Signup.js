@@ -44,11 +44,7 @@ const Signup = () => {
     setLoading(true);
 
     try {
-<<<<<<< Updated upstream
       let profileImageUrl = "";
-=======
-      const response = await axiosInstance.post(API_PATHS.AUTH.REGISTER)
->>>>>>> Stashed changes
 
       // upload image if present
       if (profilePic) {
