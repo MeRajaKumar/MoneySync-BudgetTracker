@@ -43,11 +43,13 @@ exports.deleteIncome = async (req, res) =>{
     }
 }
 
+// download excel
 exports.downloadIncomeExcel = async (req, res) =>{
     const userId = req.user.id;
     try{
         const income = await Income.find({userId}).sort({ date: -1});
 
+        // Prepare data for excel
         const data = income.map((item ) => ({
             Source: item.source,
             Amount: item.amount,

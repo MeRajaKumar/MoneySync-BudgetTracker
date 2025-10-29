@@ -1,6 +1,7 @@
 const xlsx = require('xlsx');
 const Expense = require('../models/Expense');
  
+// add expense source
  exports.addExpense = async (req, res) =>{
      const userId = req.user.id;
      try{
@@ -23,6 +24,7 @@ const Expense = require('../models/Expense');
      }
  }
  
+ // Get all Expense Source
  exports.getAllExpense = async (req, res) => {
    const userId = req.user.id;
    try {
@@ -51,7 +53,7 @@ const Expense = require('../models/Expense');
          const expense = await Expense.find({userId}).sort({ date: -1});
  
          const data = expense.map((item ) => ({
-             Category: item.source,
+             Category: item.category,
              Amount: item.amount,
              Date: item.date,
          }));
