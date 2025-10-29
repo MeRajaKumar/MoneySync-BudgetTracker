@@ -45,8 +45,11 @@ const Signup = () => {
 
     setError("");
 
-    //signUp api call
+   //signUp api call
     try {
+      const response = await axiosInstance.post(API_PATHS.AUTH.REGISTER,)
+    }
+  }
 
       // upload image if present 
       if (profilePic){
