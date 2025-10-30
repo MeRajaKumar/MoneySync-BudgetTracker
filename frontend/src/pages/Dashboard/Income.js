@@ -1,4 +1,14 @@
-import React from 'react'
+import React from 'react';
+  
+  const Income = () =>  {
+	return (
+	  <div>
+	  </div>
+	);
+  }
+  
+  export default Income;
+  import React from 'react'
 
 const Income = () => {
   return (

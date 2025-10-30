@@ -1,4 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react';
+  
+  const Home = () =>  {
+	return (
+	  <div>
+	  </div>
+	);
+  }
+  
+  export default Home;
+  import React, { useEffect, useState } from 'react'
 import DashboardLayout from '../../components/layouts/DashboardLayout.js';
 import { useUserAuth } from '../../hooks/useUserAuth.js';
 import { useNavigate } from 'react-router-dom';

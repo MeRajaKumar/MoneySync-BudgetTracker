@@ -1,4 +1,14 @@
-import React from 'react'
+import React from 'react';
+  
+  const Expense = () =>  {
+	return (
+	  <div>
+	  </div>
+	);
+  }
+  
+  export default Expense;
+  import React from 'react'
 
 const Expense = () => {
   return (
