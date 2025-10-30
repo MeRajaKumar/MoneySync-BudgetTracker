@@ -1,14 +1,5 @@
-import React from 'react';
-  
-  const Home = () =>  {
-	return (
-	  <div>
-	  </div>
-	);
-  }
-  
-  export default Home;
-  import React, { useEffect, useState } from 'react'
+
+import React, { useEffect, useState } from 'react'
 import DashboardLayout from '../../components/layouts/DashboardLayout.js';
 import { useUserAuth } from '../../hooks/useUserAuth.js';
 import { useNavigate } from 'react-router-dom';
@@ -16,6 +7,8 @@ import axiosInstance from '../../utils/axiosInstance.js';
 import { API_PATHS } from '../../utils/apiPaths.js'; 
 import InfoCard from "../../components/Cards/InfoCard.js";
 import { addThousandsSeparator } from "../../utils/helper.js"
+import RecentTransactions from '../../components/Dashboard/RecentTransactions.js';
+import FinanceOverview from '../../components/Dashboard/FinanceOverview.js';
 
 
 import { LuHandCoins, LuWalletMinimal } from 'react-icons/lu';
@@ -85,6 +78,12 @@ const Home = () => {
             transactions ={dashboardData?.recentTransactions}
             onSeeMore={() => navigate("/expense")}
           />  
+
+          <FinanceOverview
+              totalBalance={dashboardData?.totalBalance || 0}
+              totalIncome={dashboardData?.totalIncome || 0}
+              toalExpense={dashboardData?.tatalExpenses || 0}
+            />
         </div>
       </div>
     </DashboardLayout>

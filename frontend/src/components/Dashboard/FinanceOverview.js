@@ -1,14 +1,5 @@
-import React from 'react';
-  
-  const FinanceOverview = () =>  {
-	return (
-	  <div>
-	  </div>
-	);
-  }
-  
-  export default FinanceOverview;
-  import React from "react";
+
+import React from "react";
 import CustomPieChart from "../Charts/CustomPieChart";
 
 
