@@ -1,49 +1,35 @@
-// import React from 'react'
-// import SideMenu from './SideMenu ';
+import React from 'react'
+import SideMenu from './SideMenu.js';
+import { useState, activeMenu } from 'react';
+import{ HiOutlineX, HiOutlineMenu} from "react-icons/hi";
 
-<<<<<<< Updated upstream
-// const Navbar = () => {
-//     const [openSideMenu, setOpenSideMenu]= useState(false);
-//   return (
-//     <div classname="">
-//         <button
-//             className=''
-//             onClick={() => {
-//                 setOpenSideMenu(!openSideMenu);
-//             }}
-//         >{openSideMenu ?(
-//             <HiOutlineX className="" />
-//         ):(
-//             <HiOutlineMenu className="" />
-//         )}
-//         </button>
-=======
+
 const Navbar = () => {
-    const [openSideMenu, setOpenSideMenu]= useState(false);
+    const [openSideMenu, setOpenSideMenu] = useState(false);
   return (
-    <div classname="">
+    <div className="flex gap-5 bg-white border border-b border-gray-200/50 backdrop-blur-[2px] py-4 px-7 sticky top-0 z-30">
         <button
-            className=''
+            className="block lg:hidden text-black"
             onClick={() => {
                 setOpenSideMenu(!openSideMenu);
             }}
         >{openSideMenu ?(
-            <HiOutlineX className="" />
+            <HiOutlineX className="text-2xl" />
         ):(
-            <HiOutlineMenu className="" />
+            <HiOutlineMenu className="text=2xl" />
         )}
         </button>
->>>>>>> Stashed changes
 
-//         <h2 className=" ">Expense Tracker</h2>
+        <h2 className="text-lg font-medium text-black">Expense Tracker</h2>
 
-//         {openSideMenu && (
-//             <div className="fixed top-">
-//                 <SideMenu activeMenu = {activeMenu} />
-//             </div>
-//         )}
-//     </div>
-//   )
-// }
+        {openSideMenu && (
+            <div className="fixed top-[61px] -ml-4 bg-white">
+                <SideMenu activeMenu = {activeMenu} />
+            </div>
+        )}
 
-// export default Navbar
+    </div>
+  )
+}
+
+export default Navbar;

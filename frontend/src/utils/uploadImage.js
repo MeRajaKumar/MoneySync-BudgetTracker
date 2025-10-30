@@ -5,7 +5,7 @@ import axiosInstance from "./axiosInstance"; // <- MUST be relative
 const uploadImage = async (imageFile) => {
   const formData = new FormData();
   // backend field name may vary; use the exact field name expected by your server (e.g. 'image' or 'file' or 'Image')
-  formData.append("Image", imageFile);
+  formData.append("image", imageFile);
 
   try {
     const response = await axiosInstance.post(
